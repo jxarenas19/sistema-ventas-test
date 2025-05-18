@@ -17,3 +17,14 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+/composer.phar
+
+/public/js
+/public/css
+/public/build
+/public/mix-manifest.json
+/public/hot
+
+/node_modules
+/vendor
+*.phar
