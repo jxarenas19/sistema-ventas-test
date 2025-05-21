@@ -11,13 +11,13 @@ class Product
         $this->stock = $stock;
     }
 
-    public function decreaseStock(int $amount): void
+    public function decreaseStock(int $quantity): void
     {
-        if ($this->stock < $amount) {
+        if ($this->stock < $quantity) {
             throw new \DomainException('Stock insuficiente');
         }
 
-        $this->stock -= $amount;
+        $this->stock -= $quantity;
     }
 
     public function getStock()

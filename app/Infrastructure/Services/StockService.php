@@ -8,12 +8,12 @@ use App\Domain\Entities\Product as DomainProduct;
 
 class StockService implements StockServiceInterface
 {
-    public function decrease(int $productId, int $amount): void
+    public function decrease(int $productId, int $quantity): void
     {
         $productEloquent = Product::findOrFail($productId);
 
         $domainProduct = new DomainProduct($productEloquent->stock);
-        $domainProduct->decreaseStock($amount);
+        $domainProduct->decreaseStock($quantity);
 
         $productEloquent->update(['stock' => $domainProduct->getStock()]);
     }
